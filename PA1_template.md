@@ -27,7 +27,7 @@ NumberOfSteps<- aggregate(steps ~ date, data = Fitbit, sum, na.rm = TRUE)
 hist(NumberOfSteps$steps, main = "Total steps", xlab = "Given day", col = "Blue")
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-3-1.png)
 
 ```r
 DailyMean <- mean(NumberOfSteps$steps)
@@ -56,7 +56,7 @@ DailyPattern<- aggregate(steps ~ interval, data = Fitbit, mean, na.rm = TRUE)
 plot(DailyPattern$interval,DailyPattern$steps, type="l", xlab="Interval", ylab="StepNumber",main="Mean number of steps per day by interval")
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-4-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-4-1.png)
 
 ```r
 MaxInterval <- DailyPattern[which.max(DailyPattern$steps),1]
@@ -84,7 +84,7 @@ NumberOfSteps2<- aggregate(steps ~ date, data = FullData, sum, na.rm = TRUE)
 hist(NumberOfSteps2$steps, main = "Total steps", xlab = "Given day", col = "Yellow")
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-5-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-5-1.png)
 
 ```r
 DailyMean2 <- mean(NumberOfSteps2$steps)
@@ -115,5 +115,5 @@ DailyPattern2<- aggregate(steps ~ interval + IsWeekend, FullData, mean)
 xyplot(DailyPattern2$steps ~ DailyPattern2$interval|DailyPattern2$IsWeekend, main="Average Steps per Day",xlab="Interval", ylab="Steps",layout=c(2,1), type="l")
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-6-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-6-1.png)
 
